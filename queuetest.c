@@ -21,7 +21,7 @@ int main(void)
 
     for (int idx = 0; idx < 5; idx++)
     {
-        queue_deque(queue);
+        queue_dequeue(queue);
     }
     queue_print(queue);
     queue_destroy(queue);

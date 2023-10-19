@@ -5,15 +5,15 @@
 typedef struct queue_node_t queue_node_t;
 typedef struct queue_t queue_t;
 
-int queue_deque(queue_t *queue);
-int queue_destroy(queue_t *queue);
-int queue_enqueue(queue_t *queue, int value);
-int queue_isempty(const queue_t *queue);
-int queue_size(const queue_t *queue);
-queue_node_t *queue_top(const queue_t *queue);
 queue_t *queue_create(void);
-void queue_node_print(const queue_node_t *queue_node);
+int queue_dequeue(queue_t *queue);
+int queue_destroy(queue_t *queue);
+int queue_size(const queue_t *queue);
 void queue_print(const queue_t *queue);
+int queue_isempty(const queue_t *queue);
+int queue_enqueue(queue_t *queue, int value);
+queue_node_t *queue_top(const queue_t *queue);
+void queue_node_print(const queue_node_t *queue_node);
 
 typedef struct queue_node_t {
     int value;
@@ -97,8 +97,7 @@ int queue_enqueue(queue_t *queue, int value)
 }
 
 // dequeue
-// dequeue pops from the top
-int queue_deque(queue_t *queue)
+int queue_dequeue(queue_t *queue)
 {
     if (!queue || queue_isempty(queue))
     {
